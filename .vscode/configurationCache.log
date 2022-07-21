@@ -1,1 +1,0 @@
-{"buildTargets":[".PHONY","build","clean","docker","engine","install","lint","lint-prepare","make","run","stop","test","unittest","vendor"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

@@ -1,4 +1,0 @@
-make: Entering directory `/Users/thonglv9/Learning/go/go-clean-arch-v2'
-go test -v -cover -covermode=atomic ./...
-make: Leaving directory `/Users/thonglv9/Learning/go/go-clean-arch-v2'
- 
