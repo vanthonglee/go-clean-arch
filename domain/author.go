@@ -1,13 +1,16 @@
 package domain
 
-import "context"
+import (
+	"context"
+	"time"
+)
 
 // Author ...
 type Author struct {
-	ID        int64  `json:"id"`
-	Name      string `json:"name"`
-	CreatedAt string `json:"created_at"`
-	UpdatedAt string `json:"updated_at"`
+	ID        int64     `json:"id"`
+	Name      string    `json:"name"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
 }
 
 // AuthorRepository represent the author's repository contract

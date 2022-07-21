@@ -3,6 +3,7 @@ package http
 import (
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/labstack/echo"
 	"github.com/sirupsen/logrus"
@@ -89,7 +90,14 @@ func (a *ArticleHandler) Store(c echo.Context) (err error) {
 	}
 
 	ctx := c.Request().Context()
+
+	article.UpdatedAt = time.Now()
+	article.CreatedAt = time.Now()
+	article.Author.UpdatedAt = time.Now()
+	article.Author.CreatedAt = time.Now()
+
 	err = a.AUsecase.Store(ctx, &article)
+
 	if err != nil {
 		return c.JSON(getStatusCode(err), ResponseError{Message: err.Error()})
 	}
