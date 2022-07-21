@@ -29,52 +29,51 @@ funlen:
   statements: 50
 
 linters:
-# please, do not use `enable-all`: it's deprecated and will be removed soon.
-# inverted configuration with `enable-all` and `disable` is not scalable during updates of golangci-lint
-disable-all: true
-enable:
-  - deadcode
-  - errcheck
-  - funlen
-  - goconst
-  # - gocritic
-  - gocyclo
-  - golint
-  - gosec
-  - gosimple
-  - govet
-  - ineffassign
-  - interfacer
-  - lll
-  - misspell
-  - staticcheck
-  - structcheck
-  - typecheck
-  - unconvert
-  - unparam
-  - unused
-  - varcheck
+  # please, do not use `enable-all`: it's deprecated and will be removed soon.
+  # inverted configuration with `enable-all` and `disable` is not scalable during updates of golangci-lint
+  disable-all: true
+  enable:
+    - deadcode
+    - errcheck
+    - funlen
+    - goconst
+    # - gocritic
+    - gocyclo
+    - revive
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - lll
+    - misspell
+    - staticcheck
+    - structcheck
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - varcheck
 
 run:
-# default concurrency is a available CPU number
-concurrency: 2
+  # default concurrency is a available CPU number
+  concurrency: 2
 
-skip-dirs:
-  # - test/testdata_etc
-skip-files:
-  # - .*_test.go
+  skip-dirs:
+    # - test/testdata_etc
+  skip-files:
+    # - .*_test.go
 
 issues:
-exclude-rules:
-  - path: internal/(cache|renameio)/
-    linters:
-      - lll
-      - gochecknoinits
-      - gocyclo
-      - funlen
-  - path: .*_test.go
-    linters:
-      - funlen
-exclude-use-default: false
-exclude:
+  exclude-rules:
+    - path: internal/(cache|renameio)/
+      linters:
+        - lll
+        - gochecknoinits
+        - gocyclo
+        - funlen
+    - path: .*_test.go
+      linters:
+        - funlen
+  exclude-use-default: false
+  exclude:
     - should have a package comment
